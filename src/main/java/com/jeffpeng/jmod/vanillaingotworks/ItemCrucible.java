@@ -19,7 +19,6 @@ import codechicken.nei.api.API;
 
 import com.jeffpeng.jmod.JMOD;
 import com.jeffpeng.jmod.JMODRepresentation;
-import com.jeffpeng.jmod.descriptors.AlloyDescriptor;
 import com.jeffpeng.jmod.types.items.CoreItem;
 
 import cpw.mods.fml.common.Loader;
@@ -170,10 +169,11 @@ public class ItemCrucible extends CoreItem {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public void setMaps() {
 		Integer c = 1;
 		Integer d = 1;
-		for (AlloyDescriptor entry : config.alloymap) {
+		for (AlloyDescriptor entry : ((List<AlloyDescriptor>)config.get("vanillaingotworks:alloymap"))) {
 			if (entry.one != null && !ingredientmap.containsKey(entry.one)) {
 				ingredientmap.put(entry.one, c);
 				ingredientbackmap.put(c, entry.one);
@@ -194,13 +194,14 @@ public class ItemCrucible extends CoreItem {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public void setRecipes() {
 
 		ItemStack mold = new ItemStack(ItemIngotMold.instance);
 		ItemStack unfired = new ItemStack(this, 1);
 		ItemStack fired = new ItemStack(thisFired, 1);
 		GameRegistry.addSmelting(unfired, fired, 1F);
-		for (AlloyDescriptor entry : config.alloymap) {
+		for (AlloyDescriptor entry : ((List<AlloyDescriptor>)config.get("vanillaingotworks:alloymap"))) {
 			ArrayList<ItemStack> oredictentry = OreDictionary.getOres(entry.result);
 			if (oredictentry.size() > 0) {
 				ItemStack result = oredictentry.get(0);
