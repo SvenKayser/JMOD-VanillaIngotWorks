@@ -3,9 +3,9 @@ package com.jeffpeng.jmod.vanillaingotworks;
 import java.util.List;
 
 import com.jeffpeng.jmod.JMODRepresentation;
-import com.jeffpeng.jmod.primitives.OwnedObject;
+import com.jeffpeng.jmod.primitives.ModScriptObject;
 
-public class Scripting extends OwnedObject {
+public class Scripting extends ModScriptObject {
 	
 	public Scripting(JMODRepresentation owner) {
 		super(owner);
