@@ -5,6 +5,9 @@ import java.util.Map;
 
 import com.jeffpeng.jmod.JMODPlugin;
 import com.jeffpeng.jmod.JMODPluginContainer;
+import com.jeffpeng.jmod.forgeevents.JMODInitConfigEvent;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class Plugin extends JMODPlugin {
 
@@ -13,7 +16,8 @@ public class Plugin extends JMODPlugin {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void initConfig(Map<String,Object> config){
+	@Override
+	public void initConfig(Map<String, Object> config){
 		config.put("vanillaingotworks:alloymap", new ArrayList<AlloyDescriptor>());
 	}
 
