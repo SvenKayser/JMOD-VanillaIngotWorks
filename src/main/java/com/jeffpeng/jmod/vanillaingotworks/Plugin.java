@@ -16,9 +16,9 @@ public class Plugin extends JMODPlugin {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public void initConfig(Map<String, Object> config){
-		config.put("vanillaingotworks:alloymap", new ArrayList<AlloyDescriptor>());
+	@SubscribeEvent
+	public void initConfig(JMODInitConfigEvent event){
+		event.get().put("vanillaingotworks:alloymap", new ArrayList<AlloyDescriptor>());
 	}
 
 }
