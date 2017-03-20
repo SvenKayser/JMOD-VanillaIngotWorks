@@ -1,11 +1,10 @@
 package com.jeffpeng.jmod.vanillaingotworks;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import com.jeffpeng.jmod.JMODPlugin;
 import com.jeffpeng.jmod.JMODPluginContainer;
-import com.jeffpeng.jmod.forgeevents.JMODInitConfigEvent;
+import com.jeffpeng.jmod.API.forgeevents.JMODInitConfigEvent;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
