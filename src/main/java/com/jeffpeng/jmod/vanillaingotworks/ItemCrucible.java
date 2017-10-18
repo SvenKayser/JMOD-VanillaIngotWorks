@@ -15,11 +15,14 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
 import codechicken.nei.api.API;
 
 import com.jeffpeng.jmod.JMOD;
 import com.jeffpeng.jmod.JMODRepresentation;
 import com.jeffpeng.jmod.types.items.CoreItem;
+import com.jeffpeng.jmod.vanillaingotworks.AlloyDescriptor;
+import com.jeffpeng.jmod.vanillaingotworks.ItemIngotMold;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -173,6 +176,10 @@ public class ItemCrucible extends CoreItem {
 	public void setMaps() {
 		Integer c = 1;
 		Integer d = 1;
+		if(config.get("vanillaingotworks:alloymap") == null){
+			config.put("vanillaingotworks:alloymap", new ArrayList<AlloyDescriptor>());
+		}
+		
 		for (AlloyDescriptor entry : ((List<AlloyDescriptor>)config.get("vanillaingotworks:alloymap"))) {
 			if (entry.one != null && !ingredientmap.containsKey(entry.one)) {
 				ingredientmap.put(entry.one, c);
